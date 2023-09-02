@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/AndrejBajalski/carpooling-app.git/static/css/main.9a2f28f5.css",
+    "main.js": "/AndrejBajalski/carpooling-app.git/static/js/main.bf5f7352.js",
+    "index.html": "/AndrejBajalski/carpooling-app.git/index.html",
+    "main.9a2f28f5.css.map": "/AndrejBajalski/carpooling-app.git/static/css/main.9a2f28f5.css.map",
+    "main.bf5f7352.js.map": "/AndrejBajalski/carpooling-app.git/static/js/main.bf5f7352.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9a2f28f5.css",
+    "static/js/main.bf5f7352.js"
+  ]
+}
