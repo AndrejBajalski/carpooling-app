@@ -1,38 +1,161 @@
-.App {
-  text-align: center;
+.App{
+  height: 100vh;
+  font-family:  Montserrat, Roboto, sans-serif;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h2{
+  font-weight: 600!important
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.fw-bold, strong, h1, h2, h3, h4{
+  color: #075a07 !important;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#sidebar{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  height: 100%;
+  border-left-style: solid;
+  margin-right: 10px;  
+}
+#about{
+  font-size: 1.5rem;
+}
+.upload button{
+  margin-top: 1rem;
+}
+.upload button:last-child{
+  position: absolute;
+  right: 0px;
+}
+.styleless-button{
+  border: none;
+  background: none;
+  color: purple;
+}
+.avatar{
+  width: 30%;
+  max-width: 150px;
+  min-width: 65px;
+  margin: 1rem;
+}
+.avatar img{
+  border-radius: 50%;
+  width: 100%;
+}
+#profile-photo{
+  width: 80%;
+  border-radius: 50%;
+}
+#user-profile{
+  max-width: 400px;
+}
+.navbar{
+  background-color: #6ea459;
   color: white;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
-
-.App-link {
-  color: #61dafb;
+.navbar a{
+  color: white;
+  flex-grow: 1;
+  margin-right: 2rem;
+  font-size: 1.2rem;
+  font-weight: 900;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.signout{
+  position: absolute;
+  right: 1.7rem;
+}
+.ride{
+  display: flex;
+  align-items: center;
+  margin: 40px;
+  border: 1px solid #075a07 !important;
+  border-radius: 5px;
+}
+.price{
+  font-size: 1.2rem;
+  padding: 1rem; 
+  border-left: dashed;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  flex-basis: 2rem;
+}
+.price p{
+  margin: 0;
+  text-align: center;
+}
+.containerInfo{
+  flex-grow: 1;
+}
+.containerInfo > div{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 1rem 0 0 1rem;
+  justify-content: center;
+}
+.panel{
+  border: 2px solid #075a07 !important;
+  margin-top: 3rem;
+}
+.panel h2{
+  color: #1c931c;  
+}
+.panel button{
+  background-color: #1c931c !important;
+  border: none;
+}
+#info{
+  width: 100%;
+  margin-top: 3rem;
+  text-align: center;
+  padding: 1rem;
+  height: 5rem;
+  background-color: #94e694;
+  border-radius: 5px;
+}
+#search-submit{
+  position: absolute;
+  right: 2rem;
+  z-index: 100;
+}
+#text{
+  display: none;
+}
+@media (max-width: 440px){
+  .App, .form-control, button, .panel{
+    font-size: 0.8rem !important;
+   }
+   .price{
+    padding: 0.3em;
+    font-size: 1rem;
+   }
+   .ride{
+    margin: 20px 0;
+   }
+}
+@media (max-width: 780px){
+  .creatorInfo{
+    padding: 0.5rem!important
   }
-  to {
-    transform: rotate(360deg);
+  .creatorInfo div{
+    margin: 0.5em!important;
+  }
+  .rideInfo div, .avatar{
+    margin: 0.5em
+  }
+  .containerInfo > div{
+    margin: 0.5em 0 0 0.5em
+  }
+  .rate-driver div:nth-of-type(2) {
+    margin-top: 1rem;
+  }
+  .rate-driver .star-svg{
+    width: 2rem;
   }
 }
