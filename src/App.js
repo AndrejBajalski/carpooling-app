@@ -5,7 +5,7 @@ import {CreateRide} from './components/CreateRide';
 import  {Search}  from './components/Search';
 import About from './components/About';
 import Dashboard from './components/Dashboard';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {HashRouter, Route, Routes} from 'react-router-dom';
 import CustomRoute from './CustomRoute'
 import ForgotPassword from './components/ForgotPassword';
 import { AuthProvider } from './components/AuthContext';
@@ -13,11 +13,10 @@ import './App.css'
 
 function App() {
   return (
+    <HashRouter>
     <div className='App'> 
-    <BrowserRouter>
       <AuthProvider>
       <Routes>
-
         <Route element={<CustomRoute/>}>
         <Route exact path="/" element={<Dashboard/>}/>
         </Route>
@@ -30,8 +29,8 @@ function App() {
         <Route path="*" element={<h1>Page not found</h1>}/>
       </Routes>
       </AuthProvider>
-    </BrowserRouter>
    </div>
+   </HashRouter>
   );
 }
 

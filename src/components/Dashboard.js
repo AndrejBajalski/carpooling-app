@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Container, Card, Offcanvas } from "react-bootstrap";
+import { Button, Container, Offcanvas } from "react-bootstrap";
 import {useAuth} from "./AuthContext"
 import {db} from './firebase'
 import { updateProfile } from "firebase/auth";
