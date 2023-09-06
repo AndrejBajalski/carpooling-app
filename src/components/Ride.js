@@ -69,7 +69,7 @@ import { useNavigate } from 'react-router-dom'
             return <button className='styleless-button' onClick={()=>gotoCreatorProfile(passenger)}>{passenger.name + ', '}</button>
             })
         }</div>}
-        {reserved && <div><Button onClick={()=>{cancelationHandler(ride).then(()=>window.location.reload())}} className="btn-danger">Cancel ride</Button></div>}
+        {reserved && <div className='m-3'><Button onClick={()=>{cancelationHandler(ride).then(()=>window.location.reload())}} className="btn-danger">Cancel ride</Button></div>}
         </div>
         <div className="fw-bold price"><p>{ride.price} MKD</p></div>
         </div> 

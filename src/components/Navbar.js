@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Navbar, Container, Nav} from "react-bootstrap";
 import { useNavigate, Link } from "react-router-dom";
 import {useAuth} from "./AuthContext"
+import logo from '../logo/brand.jpg'
 
 export const CustomNavbar = ({dashboard, search, create})=>{
     const navigate=useNavigate();
@@ -15,7 +16,7 @@ export const CustomNavbar = ({dashboard, search, create})=>{
     return(
     <Navbar expand='lg'>
       <Container>
-        <Navbar.Brand as={Link} to="/">CarpoolingApp</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/"><img style={{maxWidth: '73px'}} src={logo} alt='brand logo'/></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="links">

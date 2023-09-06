@@ -74,7 +74,7 @@ export const Search = () =>{
         if(rating){
             res = res.filter((ride)=>{
             const [min, max] = rating.split('-')
-            return ride.creator.rating.average>=Number(min) && ride.creator.rating.average<=Number(max)
+            return ride.creator.rating.average>Number(min) && ride.creator.rating.average<=Number(max)
             })
         }
         return res 
@@ -157,26 +157,26 @@ export const Search = () =>{
       </Form.Group>          
         <DropdownButton as={Col} xs={4} onSelect={handlePriceRangeSelect} title="Select Price Range" className="mt-3">
             {priceRanges.map((range) => (
-              <Dropdown.Item key={range.value} eventKey={range.value}>
+              <Dropdown.Item key={range.value} eventKey={range.value} className={range.value===`${minPrice}-${maxPrice}` && 'selected'}>
                 {range.label}
               </Dropdown.Item>
             ))}
         </DropdownButton>
 
         <DropdownButton as={Col} xs={3} onSelect={(value)=>setRating(value)} title="Select driver's rating" className="mt-3">
-            <Dropdown.Item eventKey="">None</Dropdown.Item>
-            <Dropdown.Item eventKey="0-3">0-3</Dropdown.Item>
-            <Dropdown.Item eventKey="3-4">3-4</Dropdown.Item>
-            <Dropdown.Item eventKey="4-5">4-5</Dropdown.Item>
+            <Dropdown.Item eventKey="" className={rating==='' && 'selected'}>None</Dropdown.Item>
+            <Dropdown.Item eventKey="0-3" className={rating==='0-3' && 'selected'}>0-3</Dropdown.Item>
+            <Dropdown.Item eventKey="3-4" className={rating==='3-4' && 'selected'}>3-4</Dropdown.Item>
+            <Dropdown.Item eventKey="4-5" className={rating==='4-5' && 'selected'}>4-5</Dropdown.Item>
         </DropdownButton>        
         </Row>
 
         <Button type="submit" id="search-submit" className="mt-3 btn-success">Submit changes</Button>
 
-        <DropdownButton onSelect={(value)=>setSortBy(value)} title="Sort by" className="mt-3">
-            <Dropdown.Item eventKey="date">Departure date</Dropdown.Item>
-            <Dropdown.Item eventKey="price">Price</Dropdown.Item>
-            <Dropdown.Item eventKey="rating">Rating</Dropdown.Item>
+        <DropdownButton onSelect={(value)=>setSortBy(value)} title="Sort by" className="mt-3 filter-sort">
+            <Dropdown.Item eventKey="date" className={sortBy==='date' && 'selected'}>Departure date</Dropdown.Item>
+            <Dropdown.Item eventKey="price" className={sortBy==='price' && 'selected'}>Price</Dropdown.Item>
+            <Dropdown.Item eventKey="rating" className={sortBy==='rating' && 'selected'}>Rating</Dropdown.Item>
         </DropdownButton>
         </Form>
     </Container>

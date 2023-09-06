@@ -74,16 +74,19 @@ h1, h2{
   border: 1px solid #075a07 !important;
   border-radius: 5px;
 }
+.dropdown-item.selected{
+  background-color: rgb(16, 228, 228);
+  color: rgb(3, 0, 159);
+}
 .price{
   font-size: 1.2rem;
-  padding: 1rem; 
+  padding: 1rem;
   border-left: dashed;
   align-self: stretch;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
-  flex-basis: 2rem;
+  flex-basis: 6rem;
 }
 .price p{
   margin: 0;
@@ -101,7 +104,7 @@ h1, h2{
 }
 .panel{
   border: 2px solid #075a07 !important;
-  margin-top: 3rem;
+  margin: 3rem 0;
 }
 .panel h2{
   color: #1c931c;  
