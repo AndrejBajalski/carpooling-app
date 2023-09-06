@@ -15,7 +15,7 @@ export const CreateRide = ()=>{
     const [date, setDate]=useState(undefined);
     const [numSeats, setNumSeats]=useState(3);
     const [docSnap, setDocSnap]=useState({})
-    const [car, setCar]=useState({})
+    const [car, setCar]=useState("")
     const {currentUser, getUsersDocSnap}=useAuth();
     const docRef = collection(db, "rides")
 

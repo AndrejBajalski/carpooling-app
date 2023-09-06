@@ -17,7 +17,7 @@ export const Search = () =>{
     const [maxPrice, setMaxPrice] = useState("");
     const [rating, setRating]=useState("");
     const [results, setResults]=useState([]);
-    const [sortBy, setSortBy]=useState("")
+    const [sortBy, setSortBy]=useState("date")
     const {currentUser, getRides, getUsersDocSnap, cancelationHandler}=useAuth();
     const [newPassenger, setNewPassenger]=useState({});
     const navigate=useNavigate();
@@ -83,7 +83,7 @@ export const Search = () =>{
      const sortRides = (argument, array)=>{
            switch(argument){
                 case 'date':
-                    array.sort((a, b)=> a.date > b.date && a.time > b.time ? 1:-1)
+                    array.sort((a, b)=> a.date > b.date || a.time > b.time ? 1:-1)
                     break; 
                 case 'rating':
                     array.sort((a, b) => b.rating - a.rating);
@@ -185,7 +185,7 @@ export const Search = () =>{
         results.length? 
         results.map((ride, index)=>{
             let isFull = false, alreadyReserved=false;
-            const carInfo = JSON.parse(ride.car)           
+            const carInfo = ride.car? JSON.parse(ride.car) : ""          
             if(ride.seats < 1){
                 isFull = true;
             }
@@ -205,7 +205,7 @@ export const Search = () =>{
                 <div className="me-md-3"><span className="fw-bold">To: </span>{ride.to}</div>
                 <div className="me-md-3">Departure: {ride.date + ' at ' + ride.time}</div>
                 <div className="me-md-3"><span className="fw-bold">Available seats: </span>{ride.seats}</div>
-                <div className="me-md-3"><span className="fw-bold">Car: </span>{`${carInfo.brand} ${carInfo.model}, ${carInfo.color}`}</div>
+                {carInfo && <div className="me-md-3"><span className="fw-bold">Car: </span>{`${carInfo.brand} ${carInfo.model}, ${carInfo.color}`}</div>}
                 </div>
 
                 <div className="w-100 justify-content-around rate-driver">
