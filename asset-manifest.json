@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/carpooling-app/static/css/main.9a2f28f5.css",
-    "main.js": "/carpooling-app/static/js/main.33e5a3b2.js",
+    "main.css": "/carpooling-app/static/css/main.e6770552.css",
+    "main.js": "/carpooling-app/static/js/main.d1a3c66f.js",
+    "static/media/brand.jpg": "/carpooling-app/static/media/brand.db5c751ca557b413dd41.jpg",
     "index.html": "/carpooling-app/index.html",
-    "main.9a2f28f5.css.map": "/carpooling-app/static/css/main.9a2f28f5.css.map",
-    "main.33e5a3b2.js.map": "/carpooling-app/static/js/main.33e5a3b2.js.map"
+    "main.e6770552.css.map": "/carpooling-app/static/css/main.e6770552.css.map",
+    "main.d1a3c66f.js.map": "/carpooling-app/static/js/main.d1a3c66f.js.map"
   },
   "entrypoints": [
-    "static/css/main.9a2f28f5.css",
-    "static/js/main.33e5a3b2.js"
+    "static/css/main.e6770552.css",
+    "static/js/main.d1a3c66f.js"
   ]
 }
