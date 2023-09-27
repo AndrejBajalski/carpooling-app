@@ -108,7 +108,7 @@ export default function Dashboard(){
           console.log('passed rides: ', passed)
           const res = await Promise.all (passed.map(async (ride)=>{
             if(ride.creator.id===currentUser.uid){
-              return <Ride ride={ride} driver={docSnap}/>
+              return <Ride ride={ride} driver={docSnap} passed created/>
             }
             else if(ride.passengers.some((passenger)=>{return passenger.email===docSnap.email})){
               const creator = await getUsersDocSnap(ride.creator.id)
@@ -127,7 +127,7 @@ export default function Dashboard(){
       <Offcanvas.Title>About me</Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body id="sidebar">
-    <img src={currentUser.photoURL} id="profile-photo" alt="Avatar"/>
+    <img src={docSnap.profilePhoto} id="profile-photo" alt="Avatar"/>
     <div className="upload mb-3 position-relative">
       <p>Edit profile photo</p>  
       <input type="file" onChange={fileHandler} />
@@ -143,7 +143,7 @@ export default function Dashboard(){
     <li className="list-group-item"><h3>{docSnap.sex}</h3></li>
     <li className="list-group-item"><h3>Age: {docSnap.age}</h3></li>
     {docSnap.offersRides && <>
-    <li className="list-group-item"><h3>Rating: </h3>{docSnap.rating.numRates? docSnap.rating.average+'/5':'No rates yet'}</li>
+    <li className="list-group-item"><h3>Rating: </h3>{docSnap.rating.numRates? `${docSnap.rating.average}/5 (${docSnap.rating.numRates} rates)`:'No rates yet'}</li>
     <li className="list-group-item">
        <h3>Cars:</h3>
        {

@@ -46,20 +46,23 @@ import { useNavigate } from 'react-router-dom'
         <div className="m-md-3"><span className="fw-bold">From: </span>{ride.from}</div>
         <div className="m-md-3"><span className="fw-bold">To: </span>{ride.to}</div>
         <div className="m-md-3">Departure: {ride.date + ' at ' + ride.time}</div>
-        <div className="m-md-3"><span className="fw-bold">Available seats: </span>{ride.seats}</div>
-        </div>
+        {!passed && <div className="m-md-3"><span className="fw-bold">Available seats: </span>{ride.seats}</div>}
+        </div> 
         {!created && <div>
         <div className="m-2"><span className="fw-bold">Creator: </span>{driver.name + ' ' +driver.surname}</div>
         <div><span className="fw-bold">Contact: </span><a href={`mailto: ${driver.email}`}>{driver.email}</a></div>
         </div>
         }
-        {passed  && !ride.passengers[index].rideRating && <div className='rate-driver w-100'>Rate driver: 
-        <Rating allowFraction="true" onClick={handleRating} transition='true' readonly={rated} />
-         </div>
-         }
-        {passed && ride.passengers[index].rideRating && <div className='rate-driver w-100'>Rated: 
+        {passed  && !created && !ride.passengers[index].rideRating && 
+        <div className='rate-driver w-100'>Rate driver: 
+        <Rating allowFraction="true" onClick={handleRating} transition='true' readonly={rated}/>
+        </div>
+        }
+        {passed && !created && ride.passengers[index].rideRating?
+         <div className='rate-driver w-100'>Rated: 
           <Rating allowFraction="true" readonly="true" initialValue={ride.passengers[index].rideRating}/>
         </div>
+        :<></>
         }
         {created && <div className='w-100 ms-lg-3 ms-2'><span className="fw-bold">Passengers: </span>
         {ride.passengers.map((passenger, idx)=>{

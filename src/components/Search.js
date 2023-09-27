@@ -86,7 +86,7 @@ export const Search = () =>{
                     array.sort((a, b)=> a.date > b.date || a.time > b.time ? 1:-1)
                     break; 
                 case 'rating':
-                    array.sort((a, b) => b.rating - a.rating);
+                    array.sort((a, b) => b.creator.rating.average - a.creator.rating.average);
                     break;
                 case 'price': 
                     array.sort((a, b) => a.price - b.price);
@@ -136,11 +136,11 @@ export const Search = () =>{
         <Row className="mb-3">
         <Form.Group as={Col}>    
             <Form.Label>Starting point:</Form.Label>
-            <Form.Control type="text" onChange={(event)=>{setStartingPoint(event.target.value)}} value={startingPoint} placeholder="City, town, address"/>
+            <Form.Control type="text" onChange={(event)=>{setStartingPoint(event.target.value)}} value={startingPoint} placeholder="City or place"/>
         </Form.Group>
         <Form.Group as={Col}>
             <Form.Label>Destination:</Form.Label>
-            <Form.Control type="text" onChange={(event)=>{setDestination(event.target.value)}} value={destination} placeholder="City, town, address"/>
+            <Form.Control type="text" onChange={(event)=>{setDestination(event.target.value)}} value={destination} placeholder="City or place"/>
         </Form.Group>
         </Row>
 
@@ -174,7 +174,7 @@ export const Search = () =>{
         <Button type="submit" id="search-submit" className="mt-3 btn-success">Submit changes</Button>
 
         <DropdownButton onSelect={(value)=>setSortBy(value)} title="Sort by" className="mt-3 filter-sort">
-            <Dropdown.Item eventKey="date" className={sortBy==='date' && 'selected'}>Departure date</Dropdown.Item>
+            <Dropdown.Item eventKey="date" className={sortBy==='date' && 'selected'}>Departure</Dropdown.Item>
             <Dropdown.Item eventKey="price" className={sortBy==='price' && 'selected'}>Price</Dropdown.Item>
             <Dropdown.Item eventKey="rating" className={sortBy==='rating' && 'selected'}>Rating</Dropdown.Item>
         </DropdownButton>

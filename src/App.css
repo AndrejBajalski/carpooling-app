@@ -141,6 +141,9 @@ h1, h2{
    .ride{
     margin: 20px 0;
    }
+   #minPrice~label, #maxPrice~label{
+    font-size: 11px;
+   }
 }
 @media (max-width: 780px){
   .creatorInfo{
